@@ -1,0 +1,7 @@
+<mat-grid-list cols="3" rowHeight="1:1">
+    @for(item of items; track $index){
+        <mat-grid-tile>
+            <app-gallery-item [item]="item"></app-gallery-item>
+        </mat-grid-tile>
+    }
+</mat-grid-list>

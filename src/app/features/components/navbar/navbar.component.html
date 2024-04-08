@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>News</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+        @for(section of sections$(); track $index){
+            <button mat-menu-item [routerLink]="getUrl(section)">{{section}}</button>
+         }     
+</mat-menu>
+
+    
+
+
