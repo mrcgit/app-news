@@ -9,6 +9,7 @@ import { NewsToGalleryItemsPipe } from "../../../core/news-to-gallery-items.pipe
 import { MessageService } from '../../../services/message.service';
 import { Subscription, filter } from 'rxjs';
 import { GalleryItemEventType } from '../../components/gallery-item/gallery-item.model';
+import { CaroselloComponent } from "../../components/carosello/carosello.component";
 
 
 
@@ -17,7 +18,7 @@ import { GalleryItemEventType } from '../../components/gallery-item/gallery-item
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
-    imports: [GalleryComponent, NewsToGalleryItemsPipe]
+    imports: [GalleryComponent, NewsToGalleryItemsPipe, CaroselloComponent]
 })
 export class HomeComponent implements OnInit, OnDestroy {
 store = inject(Store);

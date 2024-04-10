@@ -1,0 +1,31 @@
+.news-card{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgb(26, 27, 37);
+    background-image: none;
+    background-origin: padding-box;
+    background-size: auto;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-collapse: collapse;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    box-sizing: border-box;
+    color: rgb(26, 27, 37);
+    display: block;
+    font-size: 14px;
+    height: 98px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    margin-left: 16px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-wrap: wrap;
+    transition-duration: 0s, 0.25s;
+    transition-property: box-shadow, width;
+    transition-timing-function: ease, ease;
+    unicode-bidi: isolate;
+    white-space-collapse: collapse;
+    width: 272px;
+}
