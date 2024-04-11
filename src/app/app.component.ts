@@ -5,7 +5,7 @@ import { NavbarComponent } from "./features/components/navbar/navbar.component";
 import { SpinnerComponent } from "./features/components/spinner/spinner.component";
 import { CaroselloComponent } from "./features/components/carosello/carosello.component";
 import { SectionType } from './model/news.types';
-import { selectFeeds, selectNews } from './store/news/news.selectors';
+import { selectCurrentSection, selectFeeds, selectNews } from './store/news/news.selectors';
 import { Store } from '@ngrx/store';
 import { NewsToCarouselCardsPipe } from "./core/news-to-carousel-cards.pipe";
 import { NewsActions } from './store/news/news.actions';
@@ -30,6 +30,8 @@ export class AppComponent {
 
   feedSection$ = this.store.selectSignal(selectFeeds);
 
+  section$ = this.store.selectSignal(selectCurrentSection);
+
   // Create a Subscription object to unsubscribe the related Observable on destroy 
   subscripion: Subscription | undefined;
 
@@ -39,7 +41,7 @@ export class AppComponent {
 
   getCards(){
     return computed(()=>{
-      return this.feedSection$().World
+      return this.feedSection$()[this.section$()];
     })()
   }
 

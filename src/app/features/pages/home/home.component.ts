@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { NewsActions } from '../../../store/news/news.actions';
 import { GalleryComponent } from '../../components/gallery/gallery.component';
-import { selectNews } from '../../../store/news/news.selectors';
+import { selectCurrentSection, selectNews } from '../../../store/news/news.selectors';
 import { SectionType } from '../../../model/news.types';
 import { NewsToGalleryItemsPipe } from "../../../core/news-to-gallery-items.pipe";
 import { MessageService } from '../../../services/message.service';
@@ -28,14 +28,14 @@ messageService = inject(MessageService);
 subscripion: Subscription | undefined;
 
 
-section:  WritableSignal<SectionType>= signal('World');
+section$ = this.store.selectSignal(selectCurrentSection);
 
 newsSection$ = this.store.selectSignal(selectNews);
 
 
 getNews(){
   return computed(()=>{
-    return this.newsSection$()[this.section()]
+    return this.newsSection$()[this.section$()]
   })
 }
   constructor(private route: ActivatedRoute){
@@ -46,8 +46,10 @@ getNews(){
         console.log(name);
         if(name){
           // update section
-          this.section.set(name as SectionType);
-          this.store.dispatch(NewsActions.loadSectionsNews({payload: name}))
+          //this.section.set(name as SectionType);
+          this.store.dispatch(NewsActions.loadSectionsNews({payload: name}));
+          // Set current section in store
+          this.store.dispatch(NewsActions.loadCurrentSectionSuccess({payload: name as SectionType}));
         } else {
           console.error("Errore recupero delle sezioni")
         }

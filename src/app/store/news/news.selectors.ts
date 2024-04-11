@@ -11,5 +11,7 @@ export const selectSectionNames = (state: AppState) => state.slice.sections;
 
 export const selectNews = (state: AppState) => state.slice.news;
 
+export const selectCurrentSection = (state: AppState) => state.slice.currentSection;
+
 
 
