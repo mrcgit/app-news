@@ -1,25 +1,18 @@
 <div class="wrapper">
 
-    <div  class="container">
-        @if(clicks > 800){
+    <div class="carousel-container">
+        @if(canScrollLeft()){
             <button mat-icon-button class="arrow-left" (click)="scrollLeft()">
                 <mat-icon>arrow_back_ios</mat-icon>
             </button>
 
         }
-
+        
         @for(card of cards; track $index){
-            <app-card></app-card>
+            <app-card [item]="card"></app-card>
         }
-    
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-       @if(isIconRightVisible()){
+
+       @if(canScrollRight()){
            <button mat-icon-button class="arrow-right" (click)="scrollRight()">
                <mat-icon>arrow_forward_ios</mat-icon>
            </button>
