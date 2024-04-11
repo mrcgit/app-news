@@ -28,6 +28,11 @@ export class CaroselloComponent {
     parentElement!.scrollLeft -= this.clicks; // Scroll to the specified position
     this.clicks -= 800; // Increment the scroll position
   }
+
+  isIconRightVisible(){
+    const parentElement = document.getElementsByClassName('container')[0];
+    return parentElement!.scrollWidth > this.clicks;
+  }
 }
 
 
