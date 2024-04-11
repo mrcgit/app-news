@@ -1,6 +1,6 @@
 import { Component, WritableSignal, computed, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FeedComponent } from "./features/components/feed/feed.component";
+
 import { NavbarComponent } from "./features/components/navbar/navbar.component";
 import { SpinnerComponent } from "./features/components/spinner/spinner.component";
 import { CaroselloComponent } from "./features/components/carosello/carosello.component";
@@ -20,7 +20,7 @@ import { CardEventType } from './features/components/card/card.model';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, FeedComponent, NavbarComponent, SpinnerComponent, CaroselloComponent, NewsToCarouselCardsPipe]
+    imports: [RouterOutlet, NavbarComponent, SpinnerComponent, CaroselloComponent, NewsToCarouselCardsPipe]
 })
 export class AppComponent {
   title = 'app-news';
