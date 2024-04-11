@@ -15,7 +15,8 @@ export class NewsToCarouselCardsPipe implements PipeTransform {
           title: a.title,
           imageUrl: a.og,
           url: a.link,
-          source: a.source
+          source: a.source,
+          icon: a.source_icon
         }
       });
     } else {

@@ -30,6 +30,10 @@
     width: 272px;
 }
 
+.news-card:hover{
+    cursor: pointer;
+}
+
 .news-card-body{
     padding: 15px;
 }
@@ -40,11 +44,21 @@
 .image-right img{
     width: 66px;
     height: 66px;
+    object-fit: cover;
 }
 
 .caption .source{
     margin-bottom: 12px;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.caption .source .source-icon{
+    max-width: 15px;
+    max-height: auto;
+    object-fit: cover;
+    margin-right: 5px;
 }
 
 .caption .title{

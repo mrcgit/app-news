@@ -6,6 +6,11 @@
     flex-direction: column;
 }
 
+.wrapper:hover{
+    cursor: pointer;
+}
+
+
 .image{
     position: absolute;
     top: 0;

@@ -3,6 +3,7 @@ export interface CarouselCardInterface{
     imageUrl: string;
     url: string;
     source: string;
+    icon: string;
 }
 
 
